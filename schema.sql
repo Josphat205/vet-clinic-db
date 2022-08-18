@@ -11,3 +11,19 @@ alter table animals add species varchar(100);
   alter table animals add constraint fk_species foreign key (species_id) references species(id) on delete cascade;
   alter table animals add column owner_id int;
   alter table animals add constraint fk_owner foreign key (owner_id) references owners(id) on delete cascade;
+  /*day 4*/
+  create table vets(id int serial primary key , name varchar(255), age int , date_of_graduation date);
+  CREATE TABLE specializations (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    species_id INT REFERENCES species (id) ON DELETE CASCADE,
+    vet_id INT REFERENCES vets (id) ON DELETE CASCADE,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE visits (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    animal_id INT REFERENCES animals (id) ON DELETE CASCADE,
+    vet_id INT REFERENCES vets (id) ON DELETE CASCADE,
+    date_of_visit DATE,
+    PRIMARY KEY (id)
+);
