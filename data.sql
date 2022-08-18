@@ -25,3 +25,29 @@ insert into species(name) values('Pokemon'),('Digimon');
    update animals set owner_id =4 where name ='Blossom';
    update animals set owner_id =5 where name ='Angemon';
     update animals set owner_id =5 where name ='Borman';
+
+INSERT INTO specializations(species_id, vet_id)
+VALUES(1, 1),
+      (2, 3),
+      (1, 3),
+      (2, 4);
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit)
+VALUES(1, 1, '2020-05-24'),
+      (1, 3, '2020-07-22'),
+      (2, 4, '2021-02-02'),
+      (3, 2, '2020-01-05'),
+      (3, 2, '2020-03-08'),
+      (3, 2, '2020-05-14'),
+      (4, 3, '2021-05-04'),
+      (5, 4, '2021-02-24'),
+      (6, 2, '2019-12-21'),
+      (6, 1, '2020-08-10'),
+      (6, 2, '2021-04-07'),
+      (8, 3, '2019-09-29'),
+      (10, 2, '2019-01-24'),
+      (10, 2, '2019-05-15'),
+      (10, 2, '2020-02-27'),
+      (10, 2, '2020-08-03'),
+      (11, 3, '2020-05-24'),
+      (11, 1, '2021-01-11');
