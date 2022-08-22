@@ -72,3 +72,8 @@ SELECT species.name, COUNT(*) FROM species
 INNER JOIN animals ON species.id = animals.species_id
 INNER JOIN visits ON animals.id = animal_id
 INNER JOIN vets v ON v.id = vet_id WHERE v.id = 2 GROUP BY species.name ORDER BY count DESC;
+
+
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
+EXPLAIN ANALYZE SELECT * FROM visits where vet_id = 2;
+EXPLAIN ANALYZE SELECT * FROM owners where email = 'owner_18327@mail.com';
